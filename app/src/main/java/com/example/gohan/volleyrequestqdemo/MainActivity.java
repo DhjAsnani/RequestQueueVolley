@@ -59,5 +59,26 @@ public class MainActivity extends AppCompatActivity {
                 requestQueue.add(stringRequest);
             }
         });*/
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                    textView.setText(response);
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                    textView.setText("Error.......");
+                        error.printStackTrace();
+                    }
+                });
+                Mysingleton.getInstance(getApplicationContext()).addToRequestQue(stringRequest);
+            }
+        });
     }
 }
