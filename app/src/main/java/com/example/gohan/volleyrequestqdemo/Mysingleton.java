@@ -49,7 +49,7 @@ public class Mysingleton {
 
     // for adding to requestQueue
 
-    public void addToRequestQue(Request request)
+    public <T>  void  addToRequestQue(Request<T> request)
     {
         requestQueue.add(request);
     }

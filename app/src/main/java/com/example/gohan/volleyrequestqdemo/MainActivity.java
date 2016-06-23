@@ -102,9 +102,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(MainActivity.this,"Error",Toast.LENGTH_SHORT).show();
+                        error.printStackTrace();
                     }
                 });
-
+                Mysingleton.getInstance(getApplicationContext()).addToRequestQue(imageRequest);
             }
         });
     }
