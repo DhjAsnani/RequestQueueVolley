@@ -29,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btn = (Button) findViewById(R.id.ser_btn);
         textView = (TextView) findViewById(R.id.ser_txt);
+       /* This method is for requestQueue
         // For message Cache
         Cache cache = new DiskBasedCache(getCacheDir(),1024*1024);
         // For n/w transaction
         Network network = new BasicNetwork(new HurlStack());
         requestQueue = new RequestQueue(cache,network);
         requestQueue.start();
+
         btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -56,6 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 });
                 requestQueue.add(stringRequest);
             }
-        });
+        });*/
     }
 }
