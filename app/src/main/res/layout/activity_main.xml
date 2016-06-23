@@ -24,7 +24,24 @@
         android:layout_height="wrap_content"
         android:text="Get Message"
         android:id="@+id/ser_btn"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/ser_txt"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Image"
+        android:id="@+id/img_btm"
+        android:layout_alignTop="@+id/ser_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

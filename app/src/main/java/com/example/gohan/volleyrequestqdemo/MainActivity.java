@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,8 +20,9 @@ import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.StringRequest;
 
 public class MainActivity extends AppCompatActivity {
-    Button btn;
+    Button btn,img_btn;
     TextView textView;
+    ImageView imageView;
     String server_url = "http://192.168.26.11:8080/Learn/volley/greetings.php";
     RequestQueue requestQueue;
     @Override
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btn = (Button) findViewById(R.id.ser_btn);
         textView = (TextView) findViewById(R.id.ser_txt);
+        img_btn = (Button) findViewById(R.id.img_btm);
+        imageView = (ImageView) findViewById(R.id.imageView);
        /* This method is for requestQueue
         // For message Cache
         Cache cache = new DiskBasedCache(getCacheDir(),1024*1024);
@@ -78,6 +82,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 Mysingleton.getInstance(getApplicationContext()).addToRequestQue(stringRequest);
+            }
+        });
+
+
+
+        img_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
             }
         });
     }
