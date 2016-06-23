@@ -1,6 +1,7 @@
 package com.example.gohan.volleyrequestqdemo;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 
 public class MainActivity extends AppCompatActivity {
     Button btn,img_btn;
+   // String uri = "@drawable/error";
     TextView textView;
     ImageView imageView;
     String server_url = "http://192.168.26.11:8080/Learn/volley/greetings.php";
@@ -101,7 +103,8 @@ public class MainActivity extends AppCompatActivity {
                 }, 0, 0, ImageView.ScaleType.CENTER_CROP, null, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this,"Error",Toast.LENGTH_SHORT).show();
+
+                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.errors));
                         error.printStackTrace();
                     }
                 });
