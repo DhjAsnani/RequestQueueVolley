@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Cache;
 import com.android.volley.Network;
@@ -33,9 +34,12 @@ public class MainActivity extends AppCompatActivity {
         // For n/w transaction
         Network network = new BasicNetwork(new HurlStack());
         requestQueue = new RequestQueue(cache,network);
+        requestQueue.start();
         btn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"yes",Toast.LENGTH_SHORT).show();
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         textView.setText("Error....");
                         error.printStackTrace();
-                        requestQueue.stop();
+
                     }
                 });
                 requestQueue.add(stringRequest);
